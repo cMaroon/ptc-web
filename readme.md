@@ -18,7 +18,8 @@ Deploying
 ### Applications
 
 - XAMPP
-- Node JS
+- VUE JS
+- NODE JS
 - Git Bash (Required)
 - VSCODE (Optional)
 
@@ -44,7 +45,7 @@ Run Notepad as Administrator then Open and Edit `C:\Windows\System32\Drivers\etc
 
 ### Quick Start
 
-Create a database: `no database for the meantime`
+Create a database: `ptcmaindb.sql`
 
 ```bash
 # Install Dependencies
