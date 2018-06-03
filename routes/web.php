@@ -20,4 +20,4 @@ Route::get('/', 'PagesController@landing');
 Route::get('/index', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
-Route::get('/student_portal','PagesController@student_portal');
+Route::get('/student_portal', 'PagesController@student_portal');
