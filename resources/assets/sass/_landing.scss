@@ -1,0 +1,41 @@
+*{
+  margin:0;
+  padding:0;
+  
+}
+
+body.body-landing{
+  margin:0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size:17px;
+  color:#006b0e;
+  line-height:1.6;
+  
+  
+}
+
+#landing{
+  background-image:url('../image/bg-back.jpeg');
+  background-size:cover;
+  background-position:center;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:0 20px;
+}
+
+#landing h1{
+  font-size:25px;
+  line-height:1.2;
+  text-shadow: 0 0 300px #000;
+}
+
+#landing p{
+  font-size:20px;
+}
+
+
+
