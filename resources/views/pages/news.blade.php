@@ -7,7 +7,7 @@
             <h2 class="font-italic font-weight-light">News &amp; Events</h2>
             
             <div class="card">
-                <img class="card-img-top" src="http://via.placeholder.com/540x180" alt="Card image cap">
+                <img class="card-img-top" src="http://via.placeholder.com/1108x370" alt="Card image cap">
                 <div class="card-body">
                     <h4 class="mb-1">
                         <a class="text-dark" href="#">Featured post</a>

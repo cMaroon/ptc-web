@@ -3,7 +3,7 @@
 @section('content')
 	<header id="landing">
 		<img src="{{ asset('images/logo.png') }}" width="250px" alt="">
-		<h1>WELCOME PTC</h1>
+		<h1>WELCOME TO PTC</h1>
 		<p>PATEROS TECHNOLOGICAL COLLEGE</p>
 		<div class="links">
 			<a href="{{ url('https://www.facebook.com/ptceduph') }}" class="btn btn-primary" style="background-color: #3B5998; border-color: #2b4272;" target="_blank">{{ __('facebook') }}</a>
