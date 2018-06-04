@@ -3,58 +3,40 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
-                <form method="POST" action="{{ route('login') }}">
+            <div class="col-md-4">
+                <h2 class="font-italic font-weight-light">sign in to proceed</h2>
+
+                <form action="{{ route('login') }}" method="POST">
                     @csrf
 
-                    <div class="form-group row">
-                        <label for="username" class="col-sm-4 col-form-label text-md-right">{{ __('username') }}</label>
+                    <div class="form-group">
+                        <input type="text" name="username" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" value="{{ old('username') }}" placeholder="username">
 
-                        <div class="col-md-6">
-                            <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus>
-
-                            @if ($errors->has('username'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('username') }}</strong>
-                                </span>
-                            @endif
-                        </div>
+                        @if ($errors->has('username'))
+                            <span class="invalid-feedback">
+                                <strong>{{ $errors->first('username') }}</strong>
+                            </span>
+                        @endif
                     </div>
 
-                    <div class="form-group row">
-                        <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('password') }}</label>
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="password">
 
-                        <div class="col-md-6">
-                            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                            @if ($errors->has('password'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                            @endif
-                        </div>
+                        @if ($errors->has('password'))
+                            <span class="invalid-feedback">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif
                     </div>
 
-                    <div class="form-group row">
-                        <div class="col-md-6 offset-md-4">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
-                                </label>
-                            </div>
-                        </div>
+                    <div class="form-group form-check">
+                        <input id="remember" type="checkbox" class="form-check-input" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                        <label class="form-check-label" for="remember">{{ __('remember me') }}</label>
                     </div>
 
-                    <div class="form-group row mb-0">
-                        <div class="col-md-8 offset-md-4">
-                            <button type="submit" class="btn btn-primary">
-                                {{ __('Login') }}
-                            </button>
-
-                            <a class="btn btn-link" href="{{ route('password.request') }}">
-                                {{ __('Forgot Your Password?') }}
-                            </a>
-                        </div>
+                    <div class="form-group mb-0">
+                        <button type="submit" class="btn btn-primary btn-lg">{{ __('Sign in') }}</button>
+                        <a class="btn btn-secondary btn-lg" href="{{ route('password.request') }}">{{ __('Reset Password') }}</a>
                     </div>
                 </form>
             </div>
