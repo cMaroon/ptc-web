@@ -18,7 +18,7 @@ class PagesController extends Controller
     {
         return view('pages.home');
     }
-    
+
     public function news()
     {
         return view('pages.news');
