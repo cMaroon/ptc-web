@@ -4,18 +4,29 @@ namespace App\Http\Controllers;
 
 class PagesController extends Controller
 {
-    public function index()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        $title = 'Welcome to Pateros Technological College - Official';
-        // return view('pages.index', compact('title'));
-        return view('pages.index')->with('title', $title);
+        // $this->middleware('auth', ['except' => ['landing', 'home', 'about', 'services', 'student_portal']]);
+    }
+
+    public function home()
+    {
+        return view('pages.home');
+    }
+
+    public function news()
+    {
+        return view('pages.news');
     }
 
     public function about()
     {
-        $title = 'About Pateros Technological College';
-
-        return view('pages.about')->with('title', $title);
+        return view('pages.about');
     }
 
     public function services()
@@ -30,9 +41,7 @@ class PagesController extends Controller
 
     public function landing()
     {
-        $title = 'PATEROS TECHNOLOGICAL COLLEGE';
-
-        return view('pages.landing')->with('title', $title);
+        return view('pages.landing');
     }
 
     public function student_portal()

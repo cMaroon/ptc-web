@@ -3,6 +3,6 @@
 
 @section('content')
 
+student portal
 
-
-  @endsection
+@endsection
