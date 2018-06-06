@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('master', ['title' => 'News'])
 
 
 @section('content')

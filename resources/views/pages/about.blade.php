@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master', ['title' => 'About'])
 
 @section('content')
     <div class="container">

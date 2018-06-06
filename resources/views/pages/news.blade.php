@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master', ['title' => 'News'])
 
 @section('content')
 <div class="container">
