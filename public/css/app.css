@@ -10779,3 +10779,8 @@ a.list-group-item-danger.active:focus {
   color: #000;
 }
 
+body {
+  background-attachment: fixed;
+  background-image: url(https://statics.qoo-static.com/cdn/img/bg.v-d2c783.png);
+}
+
