@@ -10,7 +10,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link{{ Request::is('/') ? ' active' : '' }}" href="{{ route('home') }}">{{ __('home') }}{!! Request::is('/') ? '<span class="sr-only">(current)</span>' : '' !!}</a>
+                    <a href="{{ route('home') }}" class="nav-link{{ Request::is('/') ? ' active' : '' }}">{{ __('home') }}{!! Request::is('/') ? '<span class="sr-only">(current)</span>' : '' !!}</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">community</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">team</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">faq</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">rules</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">report</a>
                 </li>
             </ul>
         </div>
