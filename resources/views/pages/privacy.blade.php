@@ -27,6 +27,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-md-8">
             <div class="card rounded-0 mb-2">
                 <div class="card-body">

@@ -15,7 +15,7 @@
     You should have received a copy of the GNU Affero General Public License
     along with TLIBR Web. If not, see <http://www.gnu.org/licenses/>.
 --}}
-@extends('master', ['title' => 'News'])
+@extends('master', ['titlePrepend' => 'News', 'currentSection' => 'Post Title'])
 
 @section('content')
 <div class="container">
