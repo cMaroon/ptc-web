@@ -18,7 +18,7 @@
 <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark tlibr-navbar">
     <div class="container">
         <a class="navbar-brand mb-0 h1 font-italic" href="{{ route('home') }}">
-            {{ config('app.name', 'The Lost Island : Battle Royale') }}
+            TLIBR
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
