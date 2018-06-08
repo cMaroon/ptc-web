@@ -23,7 +23,7 @@
         @if (isset($title))
             {{ $title }}
         @elseif (isset($titlePrepend))
-            {{ $titlePrepend . __(' · ') . $currentSection }}
+            {{ $currentSection . __(' · ') . $titlePrepend }}
         @endif
         {{ __(' | ') . config('app.name', 'The Lost Island : Battle Royale') }}
     </title>

@@ -15,7 +15,7 @@
     You should have received a copy of the GNU Affero General Public License
     along with TLIBR Web. If not, see <http://www.gnu.org/licenses/>.
 --}}
-<nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+<nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark tlibr-navbar">
     <div class="container">
         <a class="navbar-brand mb-0 h1 font-italic" href="{{ route('home') }}">
             {{ config('app.name', 'The Lost Island : Battle Royale') }}

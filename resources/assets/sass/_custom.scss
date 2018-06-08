@@ -1,17 +1,21 @@
 ::-moz-selection {
     color: #fff;
-    background-color: $teal;
+    background-color: $primary;
 }
 
 body {
     background: $white url('../img/bg-pattern-light.png');
 }
 
-#navbar {
+.tlibr-navbar {
     transition: top 300ms ease-out;
     -o-transition: top 300ms ease-out;
     -moz-transition: top 300ms ease-out;
     -webkit-transition: top 300ms ease-out;
+}
+
+.badge {
+    border-radius: 0;
 }
 
 .card {
@@ -20,8 +24,29 @@ body {
     border: 0;
 }
 
+.tlibr-carousel-control {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: $gray-800;
+    top: 50%;
+    margin-top: -20px;
+    line-height: 40px;
+    border-radius: 50%;
+    opacity: 0.3;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.carousel-control-prev {
+    margin-left: 20px;
+}
+
+.carousel-control-next {
+    margin-right: 20px;
+}
+
 .card-header-section {
-    background-color: $teal;
+    background-color: $primary;
     background-image: url('../img/bg-card-section-header.png');
     background-size: cover;
     background-position: 50%;

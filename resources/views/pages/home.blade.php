@@ -38,7 +38,12 @@
                         <h5 class="card-title mb-1 font-weight-light">
                             <a href="/news/post">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo aliquid temporibus perspiciatis unde voluptas aliquam consequuntur ipsum minus molestiae omnis.</a>
                         </h5>
-                        <p class="card-subtitle mb-2 text-muted"><small data-toggle="tooltip" data-placement="top" data-html="true" title="<strong>June 6, 2018</strong> 5:00 PM">06 Jun</small></p>
+                        <p class="card-subtitle mb-2 text-muted">
+                            <small data-toggle="tooltip" data-placement="top" data-html="true" title="<strong>June 6, 2018</strong> 5:00 PM">06 Jun</small>
+                            <span class="badge badge-primary font-weight-light">News</span>
+                            <span class="badge badge-info font-weight-light">Event</span>
+                            <span class="badge badge-warning font-weight-light">Guide</span>
+                        </p>
                         <p class="card-text font-weight-light" style="max-height: 43px; overflow: hidden;">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis officia ullam, id esse rerum eius, eveniet omnis, voluptatem voluptatibus officiis aperiam recusandae aliquam corrupti. Ratione corporis perspiciatis deserunt molestias eligendi fugit delectus voluptas nostrum praesentium veritatis adipisci, eos reiciendis, dolor eveniet temporibus natus distinctio explicabo! Aspernatur consectetur tenetur praesentium at?
                         </p>

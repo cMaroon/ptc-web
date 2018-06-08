@@ -69,17 +69,14 @@
 
     {{-- Sidepanel Image must be 900 x 250 --}}
     {{-- Event Banners will be based on Event Tag --}}
-    <a href="/news/post">
-        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/1.jpg') }}">
-    </a>
-
-    <a href="/news/post">
-        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/2.jpg') }}">
-    </a>
-
-    <a href="/news/post">
-        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/3.jpg') }}">
-    </a>
+    @for ($i = 1; $i <= 3; $i++)
+        @php
+            $image = '/images/sample-data/' . $i . '.jpg';
+        @endphp
+        <a href="/news/post">
+            <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url($image) }}">
+        </a>
+    @endfor
 </div>
 
 <div class="mb-4">
