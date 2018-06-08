@@ -1,4 +1,46 @@
+
+$shadow-sm: 0 1px 3px $gray-500;
+$shadow-md: 0 3px 15px $gray-500;
+$shadow-lg: 0 10px 20px $gray-500;
+
 body {
-    background-attachment: fixed;
-    background-image: url(https://statics.qoo-static.com/cdn/img/bg.v-d2c783.png);
+    background: $white url('../img/bg-pattern-light.png');
+    // background-attachment: fixed;
+}
+
+#navbar {
+    transition: top 300ms ease-out;
+    // box-shadow: $shadow-md;
+}
+
+.table-team tbody tr, .card, .tlibr-shadow, .carousel-inner {
+    box-shadow: $shadow-sm;
+    transition: all 25ms ease-out;
+}
+
+.table-team tbody tr:hover, .card-hover:hover, a:hover .tlibr-shadow {
+    z-index: 999;
+    box-shadow: $shadow-lg;
+}
+
+.table-team {
+    width: 100%;
+    border-spacing: 0 3px;
+    border-collapse: separate;
+}
+
+.table-team th, .table-team td, .table-team tr {
+    border: 0;
+}
+
+.table-team tbody tr td:nth-child(1) {
+    color: $blue;
+}
+
+.table-team tbody tr td:nth-child(2) {
+    color: $gray-600;
+}
+
+.table-team tbody tr td, .table-team thead tr th {
+    padding: 6px 10px;
 }

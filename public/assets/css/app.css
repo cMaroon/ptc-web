@@ -10780,7 +10780,54 @@ a.list-group-item-danger.active:focus {
 }
 
 body {
-  background-attachment: fixed;
-  background-image: url(https://statics.qoo-static.com/cdn/img/bg.v-d2c783.png);
+  background: #fff url(/images/bg-pattern-light.png?0ba8f5b08ed00045d6d96a674f0d7e51);
+}
+
+#navbar {
+  -webkit-transition: top 300ms ease-out;
+  transition: top 300ms ease-out;
+}
+
+.table-team tbody tr,
+.card,
+.tlibr-shadow,
+.carousel-inner {
+  -webkit-box-shadow: 0 1px 3px #adb5bd;
+          box-shadow: 0 1px 3px #adb5bd;
+  -webkit-transition: all 25ms ease-out;
+  transition: all 25ms ease-out;
+}
+
+.table-team tbody tr:hover,
+.card-hover:hover,
+a:hover .tlibr-shadow {
+  z-index: 999;
+  -webkit-box-shadow: 0 10px 20px #adb5bd;
+          box-shadow: 0 10px 20px #adb5bd;
+}
+
+.table-team {
+  width: 100%;
+  border-spacing: 0 3px;
+  border-collapse: separate;
+}
+
+.table-team th,
+.table-team td,
+.table-team tr {
+  border: 0;
+}
+
+.table-team tbody tr td:nth-child(1) {
+  color: #158CBA;
+}
+
+.table-team tbody tr td:nth-child(2) {
+  color: #999;
+}
+
+.table-team tbody tr td,
+.table-team thead tr th {
+  padding: 6px 10px;
 }
 
