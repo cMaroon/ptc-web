@@ -1,7 +1,7 @@
-
-$shadow-sm: 0 1px 3px $gray-500;
-$shadow-md: 0 3px 15px $gray-500;
-$shadow-lg: 0 10px 20px $gray-500;
+::-moz-selection {
+    color: #fff;
+    background-color: $teal;
+}
 
 body {
     background: $white url('../img/bg-pattern-light.png');
@@ -10,7 +10,25 @@ body {
 
 #navbar {
     transition: top 300ms ease-out;
-    // box-shadow: $shadow-md;
+}
+
+.card {
+    background-color: $white;
+    color: $gray-800;
+    border: 0;
+}
+
+.card-header-section {
+    background-color: $teal;
+    background-image: url('../img/bg-card-section-header.png');
+    background-size: cover;
+    background-position: 50%;
+}
+
+.card-header-section .card-title {
+    color: $white;
+    text-shadow: 0 1px 3px rgba(0,0,0,.75);
+    font-size: 24px;
 }
 
 .table-team tbody tr, .card, .tlibr-shadow, .carousel-inner {

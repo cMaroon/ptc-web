@@ -46,7 +46,7 @@
 </div> --}}
 
 <div class="mb-4">
-    <div class="card rounded-0 mb-2">
+    <div class="card card-header-section rounded-0 mb-2">
         <div class="card-body">
             <h4 class="card-title mb-0 font-italic">Download</h4>
         </div>
@@ -62,7 +62,7 @@
 </div>
 
 <div class="mb-4">
-    <div class="card rounded-0 mb-2">
+    <div class="card card-header-section rounded-0 mb-2">
         <div class="card-body">
             <h4 class="card-title mb-0 font-italic">Event Banners</h4>
         </div>
@@ -70,28 +70,32 @@
 
     {{-- Sidepanel Image must be 900 x 250 --}}
     <a href="#">
-        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="http://img5.fotos-hochladen.net/uploads/tohsakasignatur1pts5xgo8.png">
+        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/1.jpg') }}">
     </a>
 
     <a href="#">
-        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="https://img00.deviantart.net/ba12/i/2012/003/9/0/vongola_family_chibi_by_romancesakura-d4l7b1d.jpg">
+        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/2.jpg') }}">
     </a>
 
     <a href="#">
-        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="https://www.vocaloidnews.net/wp-content/uploads/2017/09/mikukorabogacha2017.jpg">
+        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/3.jpg') }}">
     </a>
 
     <a href="#">
-        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="http://4.bp.blogspot.com/-3RECY55_Of4/VJ4-xgs8BqI/AAAAAAAAA8I/G4PROgyjxWY/s1600/Miku%2BMiku.jpeg">
+        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/4.jpg') }}">
     </a>
 
     <a href="#">
-        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="https://assets.ppy.sh//beatmaps/687943/covers/cover.jpg">
+        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/5.jpg') }}">
+    </a>
+
+    <a href="#">
+        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/6.jpg') }}">
     </a>
 </div>
 
 <div class="mb-4">
-    <div class="card rounded-0 mb-2">
+    <div class="card card-header-section rounded-0 mb-2">
         <div class="card-body">
             <h4 class="card-title mb-0 font-italic">Partners</h4>
         </div>

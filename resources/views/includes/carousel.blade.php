@@ -17,30 +17,24 @@
 --}}
 <div id="carouselMain" class="carousel slide mb-4" data-ride="carousel">
     <div class="carousel-inner rounded-0 carousel-main">
-        {{-- Carousel Image Size 1000 x 400 --}}
+        {{-- Carousel Image Size 900 x 250 --}}
         <div class="carousel-item active">
-            <img class="d-block w-100" src="https://1.bp.blogspot.com/-b5mZ6yFPKZE/VTy3JUJVleI/AAAAAAAAAvU/J9gREcPLsE8/s1600/aot%2B18.jpg">
+            <img class="d-block w-100" src="{{ url('/images/sample-data/1.jpg') }}">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="http://2.bp.blogspot.com/-NEh2VzogPRY/VTyUxv3o0XI/AAAAAAAAAuY/CO_rCpvckQk/s1600/aot%2B15.jpg">
+            <img class="d-block w-100" src="{{ url('/images/sample-data/2.jpg') }}">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="http://3.bp.blogspot.com/-3zog_UVG0xg/VTyJPenvCCI/AAAAAAAAAtw/wsYLOyx8mAg/s1600/aot%2B12b.jpg">
+            <img class="d-block w-100" src="{{ url('/images/sample-data/3.jpg') }}">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="http://3.bp.blogspot.com/-ie-JDMI3FS4/VT9d0u8jkeI/AAAAAAAAAww/GIgEPiH9KT4/s1600/aot%2B23.jpg">
+            <img class="d-block w-100" src="{{ url('/images/sample-data/4.jpg') }}">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="http://2.bp.blogspot.com/-VyBtIgsY30Q/VTyCjYFmWRI/AAAAAAAAAs8/0z3oSXEf-lU/s1600/aot%2B10.jpg">
+            <img class="d-block w-100" src="{{ url('/images/sample-data/5.jpg') }}">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="https://3.bp.blogspot.com/-n2QgRh7tMHE/VTxx_AAY8nI/AAAAAAAAArs/lyfZohf07gM/s1600/aot%2B6b.jpg">
-        </div>
-        <div class="carousel-item">
-            <img class="d-block w-100" src="http://4.bp.blogspot.com/-_bEw_kQMAZg/VTyH0AbmywI/AAAAAAAAAtk/3w689xIqVho/s1600/aot%2B12.jpg">
-        </div>
-        <div class="carousel-item">
-            <img class="d-block w-100" src="http://4.bp.blogspot.com/-J70Vgypmbtg/VTzArQfsiFI/AAAAAAAAAvk/kTQTrb3SYR4/s1600/aot%2B20a.jpg">
+            <img class="d-block w-100" src="{{ url('/images/sample-data/6.jpg') }}">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselMain" role="button" data-slide="prev">

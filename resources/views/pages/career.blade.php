@@ -21,7 +21,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="card rounded-0 mb-4">
+            <div class="card card-header-section rounded-0 mb-4">
                 <div class="card-body">
                     <h4 class="card-title mb-0 font-italic">[Career] The Lost Island : Battle Royale needs you!</h4>
                 </div>
