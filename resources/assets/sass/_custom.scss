@@ -5,11 +5,13 @@
 
 body {
     background: $white url('../img/bg-pattern-light.png');
-    // background-attachment: fixed;
 }
 
 #navbar {
     transition: top 300ms ease-out;
+    -o-transition: top 300ms ease-out;
+    -moz-transition: top 300ms ease-out;
+    -webkit-transition: top 300ms ease-out;
 }
 
 .card {
@@ -33,12 +35,21 @@ body {
 
 .table-team tbody tr, .card, .tlibr-shadow, .carousel-inner {
     box-shadow: $shadow-sm;
+    -o-box-shadow: $shadow-sm;
+    -moz-box-shadow: $shadow-sm;
+    -webkit-box-shadow: $shadow-sm;
     transition: all 25ms ease-out;
+    -o-transition: all 25ms ease-out;
+    -moz-transition: all 25ms ease-out;
+    -webkit-transition: all 25ms ease-out;
 }
 
 .table-team tbody tr:hover, .card-hover:hover, a:hover .tlibr-shadow {
     z-index: 999;
     box-shadow: $shadow-lg;
+    -o-box-shadow: $shadow-lg;
+    -moz-box-shadow: $shadow-lg;
+    -webkit-box-shadow: $shadow-lg;
 }
 
 .table-team {
@@ -52,7 +63,7 @@ body {
 }
 
 .table-team tbody tr td:nth-child(1) {
-    color: $blue;
+    color: $primary;
 }
 
 .table-team tbody tr td:nth-child(2) {

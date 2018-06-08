@@ -27,6 +27,16 @@ class PagesController extends Controller
         return view('pages.home');
     }
 
+    public function news()
+    {
+        return view('pages.news');
+    }
+
+    public function newsPost()
+    {
+        return view('news.post');
+    }
+
     public function team()
     {
         return view('pages.team');

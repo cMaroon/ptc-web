@@ -33,15 +33,15 @@ $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-700 !default;
 
-$shadow-sm: 0 1px 3px $gray-500;
-$shadow-md: 0 3px 15px $gray-500;
-$shadow-lg: 0 10px 20px $gray-500;
+$shadow-sm: 0 1px 3px rgba(0,0,0,.25);
+$shadow-md: 0 3px 15px rgba(0,0,0,.25);
+$shadow-lg: 0 10px 20px rgba(0,0,0,.25);
 
 $yiq-contrasted-threshold: 200 !default;
 
 // Fonts
 
-$font-family-sans-serif: "Exo 2", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-sans-serif: "Exo 2", "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 
 $font-size-base: 0.875rem !default;
 

@@ -15,7 +15,6 @@
     You should have received a copy of the GNU Affero General Public License
     along with TLIBR Web. If not, see <http://www.gnu.org/licenses/>.
 --}}
-{{-- Signin will be disabled for public --}}
 {{-- <div class="mb-4">
     <div class="card mb-2">
         <div class="card-body">
@@ -55,7 +54,7 @@
     <div class="card rounded-0 mb-2">
         <div class="card-body">
             <p class="card-text">
-                Let's get you started! <a href="#">Download at Steam</a>
+                Let's get you started! <a href="#">Download</a>
             </p>
         </div>
     </div>
@@ -69,28 +68,17 @@
     </div>
 
     {{-- Sidepanel Image must be 900 x 250 --}}
-    <a href="#">
+    {{-- Event Banners will be based on Event Tag --}}
+    <a href="/news/post">
         <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/1.jpg') }}">
     </a>
 
-    <a href="#">
+    <a href="/news/post">
         <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/2.jpg') }}">
     </a>
 
-    <a href="#">
+    <a href="/news/post">
         <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/3.jpg') }}">
-    </a>
-
-    <a href="#">
-        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/4.jpg') }}">
-    </a>
-
-    <a href="#">
-        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/5.jpg') }}">
-    </a>
-
-    <a href="#">
-        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/6.jpg') }}">
     </a>
 </div>
 

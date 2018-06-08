@@ -30,7 +30,7 @@
                     <a href="{{ route('home') }}" class="nav-link{{ Request::is('/') ? ' active' : '' }}">home</a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link disabled" data-toggle="tooltip" data-placement="bottom" title="Coming Soon™">news</a>
+                    <a href="{{ route('news') }}" class="nav-link{{ Request::is('news') ? ' active' : '' }}">news</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('faq') }}" class="nav-link{{ Request::is('frequently-asked-question') ? ' active' : '' }}">faq</a>

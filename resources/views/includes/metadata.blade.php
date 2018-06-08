@@ -23,10 +23,10 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<link rel="shortcut icon" href="{{ asset('/favicon.png') }}" type="image/x-icon">
-<link rel="icon" href="{{ asset('/favicon.png') }}" type="image/x-icon">
+<link rel="shortcut icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon">
 <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-<link href="//fonts.googleapis.com/css?family=Exo+2:300,300italic,200,200italic,400,400italic,500,500italic,600,600italic,700,700italic,900" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Exo+2:300,300italic,200,200italic,400,400italic,500,500italic,600,600italic,700,700italic,900" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i" rel="stylesheet" type="text/css">
 <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
 

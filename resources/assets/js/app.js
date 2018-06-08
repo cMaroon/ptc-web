@@ -9,17 +9,6 @@ require('./bootstrap');
 $(document).ready(function() {
 
     /**
-     * Carousel
-     */
-    $("#carouselMain").swiperight(function() {
-        $(this).carousel('prev');
-    });
-    $("#carouselMain").swipeleft(function() {
-        $(this).carousel('next');
-    });
-
-
-    /**
      * Navigation
      */
     var previousScrollPosition = $(window).scrollTop();

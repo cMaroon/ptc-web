@@ -30,12 +30,13 @@
                     <h4 class="card-title mb-0 font-italic">News</h4>
                 </div>
             </div>
-
-            @for ( $i=0; $i < 7; $i++)
+            
+            {{-- News will have different tags --}}
+            @for ( $i=0; $i < 5; $i++)
                 <div class="card rounded-0 mb-2 card-hover">
                     <div class="card-body">
                         <h5 class="card-title mb-1 font-weight-light">
-                            <a href="#">Post title</a>
+                            <a href="/news/post">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo aliquid temporibus perspiciatis unde voluptas aliquam consequuntur ipsum minus molestiae omnis.</a>
                         </h5>
                         <p class="card-subtitle mb-2 text-muted"><small data-toggle="tooltip" data-placement="top" data-html="true" title="<strong>June 6, 2018</strong> 5:00 PM">06 Jun</small></p>
                         <p class="card-text font-weight-light" style="max-height: 43px; overflow: hidden;">
@@ -44,6 +45,12 @@
                     </div>
                 </div>
             @endfor
+
+            <div class="card rounded-0 mb-2">
+                <div class="card-body text-center">
+                    <a href="{{ route('news') }}">View More</a>
+                </div>
+            </div>
         </div>
 
         <div class="col-md-4">
