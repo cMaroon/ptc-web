@@ -1,7 +1,7 @@
 <?php
 
 /**
- *    Copyright 2018 The Lost Island : Battle Royale
+ *    Copyright 2018 The Lost Island : Battle Royale.
  *
  *    This file is part of TLIBR Web. TLIBR Web is distributed with the hope of
  *    attracting more community contributions to the core ecosystem of The Lost Island : Battle Royale.
