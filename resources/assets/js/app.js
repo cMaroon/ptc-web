@@ -1,15 +1,15 @@
 
 /**
- * To avoid conflict
+ * Require 
+ * I guess the cleanest way to avoid the conflict would be to 
+ * build a custom jquery-ui dist without the tooltip.
  */
-$.widget.bridge('uitooltip', $.ui.tooltip);
-
-/**
- * Require Bootstrap
- */
+require('./jquery');
+require('./jquery-ui');
 require('./bootstrap');
 
 $(window).ready(function() {
+    
     /**
      * Tooltip
      */

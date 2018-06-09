@@ -33,6 +33,4 @@
 <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
 
 {{-- Scripts --}}
-<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
-<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 <script src="{{ asset('assets/js/app.js') }}"></script>
