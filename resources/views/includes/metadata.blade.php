@@ -15,6 +15,7 @@
     You should have received a copy of the GNU Affero General Public License
     along with TLIBR Web. If not, see <http://www.gnu.org/licenses/>.
 --}}
+{{-- Metas --}}
 <meta charset="utf-8">
 <meta name="description" content="ヽ( ﾟ ヮﾟ)ﾉ">
 <meta name="keywords" content="ヽ( ﾟ ヮﾟ)ﾉ">
@@ -23,6 +24,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+{{-- Links --}}
 <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon">
 <link rel="icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon">
 <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -30,6 +32,7 @@
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i" rel="stylesheet" type="text/css">
 <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
 
+{{-- Scripts --}}
 <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
 <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 <script src="{{ asset('assets/js/app.js') }}"></script>
