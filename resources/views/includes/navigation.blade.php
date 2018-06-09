@@ -15,7 +15,7 @@
     You should have received a copy of the GNU Affero General Public License
     along with TLIBR Web. If not, see <http://www.gnu.org/licenses/>.
 --}}
-<nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark tlibr-navbar">
+<nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark d-block tlibr-navbar">
     <div class="container">
         <a class="navbar-brand mb-0 h1 font-italic" href="{{ route('home') }}">
             TLIBR
@@ -43,6 +43,37 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" data-toggle="tooltip" data-placement="bottom" title="Coming Soon™">report</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        Username <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu rounded-0" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="">My Profile</a>
+                        <a class="dropdown-item" href="">Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
+                        <a class="dropdown-item" href=""
+                            onclick="
+                                event.preventDefault();
+                                document.getElementById('logout-form').submit();"
+                        >
+                            Logout
+                        </a>
+
+                        {{-- {!! Form::open([
+                            'id'     => 'logout-form',
+                            'route'  => 'logout',
+                            'method' => 'POST', 
+                            'style'  => 'display: none;',
+                        ]) !!}
+                            @csrf
+                        {!! Form::close() !!} --}}
+                    </div>
                 </li>
             </ul>
         </div>

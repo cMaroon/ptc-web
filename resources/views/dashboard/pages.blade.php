@@ -15,28 +15,21 @@
     You should have received a copy of the GNU Affero General Public License
     along with TLIBR Web. If not, see <http://www.gnu.org/licenses/>.
 --}}
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    @include('includes.metadata')
-    <title>
-        @if (isset($title))
-            {{ $title }}
-        @elseif (isset($titlePrepend))
-            {{ $currentSection . __(' · ') . $titlePrepend }}
-        @endif
-        {{ __(' | ') . config('app.name', 'The Lost Island : Battle Royale') }}
-    </title>
-</head>
-<body>
-    <div id="app">
-        @include('includes.navigation')
 
-        <main class="py-4 p-sm-5 m-sm-4" >
-            @yield('content')
-        </main>
+@extends('master', ['titlePrepend' => 'Dashboard', 'currentSection' => 'Pages'])
+
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            @include('includes.dashboard_sidepanel')
+        </div>
+
+        <div class="col-lg-9">
+            <div class="card rounded-0">
+                <div class="card-body">#pages</div>
+            </div>
+        </div>
     </div>
-    
-    @yield('script')
-</body>
-</html>
+</div>
+@endsection

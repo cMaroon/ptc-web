@@ -18,8 +18,6 @@ class CreateAccountsTable extends Migration
             $table->string('username');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('twitch')->nullable();
-            $table->string('youtube')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

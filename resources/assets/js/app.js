@@ -1,27 +1,20 @@
 
 /**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
+ * To avoid conflict
+ */
+$.widget.bridge('uitooltip', $.ui.tooltip);
+
+/**
+ * Require Bootstrap
  */
 require('./bootstrap');
 
-$(document).ready(function() {
-
+$(window).ready(function() {
     /**
-     * Navigation
+     * Tooltip
      */
-    var previousScrollPosition = $(window).scrollTop();
-    $(window).scroll(function() {
-        var currentScrollPosition = $(window).scrollTop();
-        if (previousScrollPosition > currentScrollPosition) {
-            $("#navbar").css('top', "0px");
-        } else {
-            $("#navbar").css('top', "-" + $('#navbar').outerHeight(true) + "px");
-        }
-        previousScrollPosition = currentScrollPosition;
-    });
-    
+    $('[data-toggle="tooltip"]').tooltip();
+
     /**
      * Display Stop! Message in console. 
      */
@@ -40,4 +33,18 @@ $(document).ready(function() {
                "                           888\n";
     }
     console.log(stop());
+});
+
+/**
+ * Navigation
+ */
+var previousScrollPosition = $(window).scrollTop();
+$(window).scroll(function() {
+    var currentScrollPosition = $(window).scrollTop();
+    if (previousScrollPosition > currentScrollPosition) {
+        $("#navbar").css('top', "0px");
+    } else {
+        $("#navbar").css('top', "-" + $('#navbar').outerHeight(true) + "px");
+    }
+    previousScrollPosition = currentScrollPosition;
 });

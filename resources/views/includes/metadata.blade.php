@@ -30,10 +30,6 @@
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i" rel="stylesheet" type="text/css">
 <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 <script src="{{ asset('assets/js/app.js') }}"></script>
-<script>
-    $(document).ready(function() {
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-</script>

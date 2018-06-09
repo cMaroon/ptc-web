@@ -7,6 +7,10 @@ body {
     background: $white url('../img/bg-pattern-light.png');
 }
 
+.ui-sortable img, .ui-sortable tr {
+    cursor: move;
+}
+
 .tlibr-navbar {
     transition: top 300ms ease-out;
     -o-transition: top 300ms ease-out;
@@ -22,6 +26,19 @@ body {
     background-color: $white;
     color: $gray-800;
     border: 0;
+}
+
+.card-body {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-hover:hover, a:hover .tlibr-shadow {
+    z-index: 1000;
+    box-shadow: $shadow-lg;
+    -o-box-shadow: $shadow-lg;
+    -moz-box-shadow: $shadow-lg;
+    -webkit-box-shadow: $shadow-lg;
 }
 
 .tlibr-carousel-control {
@@ -69,21 +86,18 @@ body {
     -webkit-transition: all 25ms ease-out;
 }
 
-.table-team tbody tr:hover, .card-hover:hover, a:hover .tlibr-shadow {
-    z-index: 999;
-    box-shadow: $shadow-lg;
-    -o-box-shadow: $shadow-lg;
-    -moz-box-shadow: $shadow-lg;
-    -webkit-box-shadow: $shadow-lg;
-}
-
 .table-team {
     width: 100%;
     border-spacing: 0 3px;
     border-collapse: separate;
 }
 
-.table-team th, .table-team td, .table-team tr {
+.table-team thead tr th:first-child, .table-team tbody tr td:first-child {
+    width: 250px;
+}
+
+.table-team tr {
+    background: $white;
     border: 0;
 }
 
