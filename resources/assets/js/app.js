@@ -1,27 +1,20 @@
 
 /**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
+ * Require 
+ * I guess the cleanest way to avoid the conflict would be to 
+ * build a custom jquery-ui dist without the tooltip.
  */
+require('./jquery');
+require('./jquery-ui');
 require('./bootstrap');
 
-$(document).ready(function() {
-
-    /**
-     * Navigation
-     */
-    var previousScrollPosition = $(window).scrollTop();
-    $(window).scroll(function() {
-        var currentScrollPosition = $(window).scrollTop();
-        if (previousScrollPosition > currentScrollPosition) {
-            $("#navbar").css('top', "0px");
-        } else {
-            $("#navbar").css('top', "-" + $('#navbar').outerHeight(true) + "px");
-        }
-        previousScrollPosition = currentScrollPosition;
-    });
+$(window).ready(function() {
     
+    /**
+     * Tooltip
+     */
+    $('[data-toggle="tooltip"]').tooltip();
+
     /**
      * Display Stop! Message in console. 
      */
@@ -40,4 +33,18 @@ $(document).ready(function() {
                "                           888\n";
     }
     console.log(stop());
+});
+
+/**
+ * Navigation
+ */
+var previousScrollPosition = $(window).scrollTop();
+$(window).scroll(function() {
+    var currentScrollPosition = $(window).scrollTop();
+    if (previousScrollPosition > currentScrollPosition) {
+        $("#navbar").css('top', "0px");
+    } else {
+        $("#navbar").css('top', "-" + $('#navbar').outerHeight(true) + "px");
+    }
+    previousScrollPosition = currentScrollPosition;
 });

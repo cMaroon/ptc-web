@@ -23,6 +23,11 @@ Route::get('/career', 'PagesController@career')->name('career');
 |--------------------------------------------------------------------------
 */
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/dashboard/carousel', 'DashboardController@carousel')->name('dashboard.carousel');
+Route::get('/dashboard/tag-list', 'DashboardController@tagList')->name('dashboard.tag_list');
+Route::get('/dashboard/news', 'DashboardController@news')->name('dashboard.news');
+Route::get('/dashboard/pages', 'DashboardController@pages')->name('dashboard.pages');
+Route::get('/dashboard/users', 'DashboardController@users')->name('dashboard.users');
 
 /*
 |--------------------------------------------------------------------------

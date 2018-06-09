@@ -19,5 +19,19 @@
 @extends('master', ['title' => 'Dashboard'])
 
 @section('content')
-a
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            @include('includes.dashboard_sidepanel')
+        </div>
+
+        <div class="col-lg-9">
+            <div class="card rounded-0">
+                <div class="card-body">
+                    #dashboard
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

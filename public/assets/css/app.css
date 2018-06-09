@@ -10788,6 +10788,11 @@ body {
   background: #fff url(/images/bg-pattern-light.png?0ba8f5b08ed00045d6d96a674f0d7e51);
 }
 
+.ui-sortable img,
+.ui-sortable tr {
+  cursor: move;
+}
+
 .tlibr-navbar {
   transition: top 300ms ease-out;
   -o-transition: top 300ms ease-out;
@@ -10803,6 +10808,20 @@ body {
   background-color: #fff;
   color: #333;
   border: 0;
+}
+
+.card-body {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hover:hover,
+a:hover .tlibr-shadow {
+  z-index: 1000;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 .tlibr-carousel-control {
@@ -10854,25 +10873,19 @@ body {
   -webkit-transition: all 25ms ease-out;
 }
 
-.table-team tbody tr:hover,
-.card-hover:hover,
-a:hover .tlibr-shadow {
-  z-index: 999;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-  -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-}
-
 .table-team {
   width: 100%;
   border-spacing: 0 3px;
   border-collapse: separate;
 }
 
-.table-team th,
-.table-team td,
+.table-team thead tr th:first-child,
+.table-team tbody tr td:first-child {
+  width: 250px;
+}
+
 .table-team tr {
+  background: #fff;
   border: 0;
 }
 

@@ -34,6 +34,31 @@ class DashboardController extends Controller
         return view('dashboard.index');
     }
 
+    public function carousel()
+    {
+        return view('dashboard.carousel');
+    }
+
+    public function tagList()
+    {
+        return view('dashboard.tag_list');
+    }
+
+    public function news()
+    {
+        return view('dashboard.news');
+    }
+
+    public function pages()
+    {
+        return view('dashboard.pages');
+    }
+
+    public function users()
+    {
+        return view('dashboard.users');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
