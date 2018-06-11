@@ -18,6 +18,10 @@ body {
     -webkit-transition: top 300ms ease-out;
 }
 
+.tlibr-carousel-imgs:not(:last-of-type) {
+    margin-bottom: 0.5rem !important;
+}
+
 .badge {
     border-radius: 0;
 }
@@ -33,7 +37,9 @@ body {
     overflow: hidden;
 }
 
-.card-hover:hover, a:hover .tlibr-shadow {
+.card-hover:hover, 
+a:hover .tlibr-shadow,
+.tlibr-shadow-lg {
     z-index: 1000;
     box-shadow: $shadow-lg;
     -o-box-shadow: $shadow-lg;

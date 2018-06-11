@@ -26,33 +26,97 @@
         </div>
 
         <div class="col-lg-9">
-            <div class="card rounded-0">
+            <div class="card rounded-0 mb-2">
                 <div class="card-body">
-                    <div class="alert alert-primary text-white font-italic font-weight-light">Image size must be exactly 900 x 250 px</div>
-
-                    <a href="#" class="btn btn-primary mb-2">Save Sort Order</a>
-
-                    <div id="ui-sortable">
-                        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/1.jpg') }}">
-                        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/2.jpg') }}">
-                        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/3.jpg') }}">
-                        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/4.jpg') }}">
-                        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/5.jpg') }}">
-                        <img class="tlibr-shadow d-block w-100 rounded-0 mb-2" src="{{ url('/images/sample-data/6.jpg') }}">
-                    </div>
+                    <p class="card-text font-italic font-weight-light text-muted">Image size must be exactly 900 x 250 px</p>
+                    <hr>
+                    <form action="{{ route('dashboard.carousel.store') }}" class="needs-validation" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" name="_method" value="POST">
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <input type="file" name="carousel_image" class="custom-file-input{{ $errors->has('carousel_image') ? ' is-invalid' : '' }}">
+                                @if ($errors->has('carousel_image'))
+                                    <div class="invalid-feedback">
+                                        {!! $errors->first('carousel_image') !!}
+                                    </div>
+                                @endif
+                                <label id="carousel_image_info" class="custom-file-label" for="cover_image" style="overflow: hidden !important;">Browse Carousel Image&hellip;</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Upload Image</button>
+                    </form>
                 </div>
             </div>
+
+            @if (count($images) > 0)
+                <div class="card rounded-0">
+                    <div class="card-body">
+                        @if (count($images) > 1) 
+                            <button type="submit" onclick="saveSort();" class="btn btn-primary mb-2">Save Sort Order</button>
+                        @endif
+                        
+                        <div id="ui-sortable" class="">
+                            @foreach ($images as $carousel)
+                                <div class="tlibr-carousel-imgs" style="position: relative;">
+                                    <img id="{{ $carousel->id }}" class="tlibr-shadow d-block w-100 rounded-0" src="{{ url('/storage/carousel/' . $carousel->image) }}">
+                                    <a href="{{ route('dashboard.carousel.delete', $carousel->id) }}" class="btn btn-danger btn-sm mb-2 tlibr-shadow" style="position: absolute; top: 10px; right: 10px;" onclick="event.preventDefault(); $('#delete-image-' + {{ $carousel->id }}).submit();">Remove</a>
+                                </div>
+                                
+                                <form id="delete-image-{{ $carousel->id }}" action="{{ route('dashboard.carousel.delete', $carousel->id) }}" method="POST" style="visibility: none;" onsubmit="return confirmDelete()">
+                                    @csrf
+                                    <input type="hidden" name="_method" value="DELETE">
+                                </form>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            @endif
         </div>
     </div>
 </div>
+
+<form id="update-sort" action="{{ route('dashboard.carousel.update.sortorder') }}" method="POST" style="visibility: none;">
+    @csrf
+    <input type="hidden" name="sort_order" id="sort_order"> 
+    <input type="hidden" name="_method" value="PUT">
+</form>
 @endsection
 
 @section('script')
-<script>
-$(window).ready(function() {
-    $("#ui-sortable img").css( "max-width", $( "#ui-sortable img" ).width() + "px" );
-    $("#ui-sortable").sortable();
-    $("#ui-sortable").disableSelection();
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#ui-sortable img").css("max-width", $("#ui-sortable img").width() + "px");
 });
+
+/**
+ * Remove fakepath
+ */
+$('[name="carousel_image"]').change(function() {
+    var path = $(this).val().substring($(this).val().lastIndexOf("\\") + 1, $(this).val().length);
+    $('#carousel_image_info').html(path);
+});
+
+/**
+ * For Sort Order
+ */
+function saveSort() {
+    var selectedLanguage = new Array();
+    $('#ui-sortable img').each(function() {
+        selectedLanguage.push($(this).attr("id"));
+    });
+    $("#sort_order").val(selectedLanguage);
+    $('#update-sort').submit();
+}
+
+/**
+ * Confirm Delete
+ * Just call it
+ */
+function confirmDelete() {
+    if (!confirm('Do you want to delete this item?')) {
+        event.preventDefault();
+    }
+}
 </script>
 @endsection

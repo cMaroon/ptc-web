@@ -5,12 +5,33 @@ The Lost Island : Battle Royale Official Website
 
 The Lost Island : Battle Royale Official Website
 
+Requirements
+------------
+- A PHP 7.1+ environment
+- MySQL 5.7
+
+Getting Started
+---------------
+See the [setup guide](SETUP.md) for a rundown on how to get a development environment up.
+
+Contributing
+------------
+We welcome all contributions, we recommend you open an issue with your intentions before spending too much time, to ensure no efforts is wasted.
+
+Contributions can be made via pull requests to this repository. If you're unsure of what you can help with, check out the [list of open issues](https://github.com/Twiistrz/tlibr-web/issues).
+
 Seeking Help
 ------------
 
+If you need help with anything, you have two options:
+
 ### Creating an Issue
 
-If you have something you want to discuss in detail, or have hit an issue which you believe others will also have in deployment or development on the system, [opening an issue](https://gitlab.com/Twiistrz/tlibr-web/issues) is the best way to get help. It creates a permanent resource for others wishing to contribute to conversation. Please **make sure to search first** in case someone else has already addressed the same issue!
+If you have something you want to discuss in detail, or have hit an issue which you believe others will also have in deployment or development on the system, [opening an issue](https://github.com/Twiistrz/tlibr-web/issues) is the best way to get help. It creates a permanent resource for others wishing to contribute to conversation. Please **make sure to search first** in case someone else has already addressed the same issue!
+
+#### Discord
+
+Alternatively, you can join the [development discord](https://discord.gg/ZBxkcU6) for assistance.
 
 Licence
 -------
