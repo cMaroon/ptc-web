@@ -21,7 +21,6 @@
 namespace App\Http\Controllers;
 
 use App\Carousel;
-use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {

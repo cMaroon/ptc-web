@@ -25,30 +25,30 @@ class CarouselController extends Controller
         $carousel->sort_order = Carousel::count();
         $carousel->save();
 
-        return redirect( route('dashboard.carousel') );
+        return redirect(route('dashboard.carousel'));
     }
 
     public function update_sortorder(Request $request)
     {
-        $arrID = explode(",", $request->input('sort_order'));
+        $arrID = explode(',', $request->input('sort_order'));
         for ($i = 0; $i < count($arrID); $i++) {
             Carousel::where('id', $arrID[$i])->update(['sort_order' => $i]);
         }
 
-        return redirect( route('dashboard.carousel') );
+        return redirect(route('dashboard.carousel'));
     }
 
     public function destroy($image_id)
     {
         $carousel = new Carousel();
-        $carousel = Carousel::where('id' , $image_id)->first();
+        $carousel = Carousel::where('id', $image_id)->first();
 
         if (!empty($carousel->image)) {
             Storage::delete('public/carousel/' . $carousel->image);
         }
 
         $carousel->delete();
-        
-        return redirect( route('dashboard.carousel') );
+
+        return redirect(route('dashboard.carousel'));
     }
 }
