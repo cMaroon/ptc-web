@@ -44,7 +44,7 @@ class CarouselController extends Controller
         $carousel = Carousel::where('id', $image_id)->first();
 
         if (!empty($carousel->image)) {
-            Storage::delete('public/carousel/' . $carousel->image);
+            Storage::delete('public/carousel/'.$carousel->image);
         }
 
         $carousel->delete();
