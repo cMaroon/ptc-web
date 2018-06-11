@@ -4,13 +4,15 @@ php:
   - 7.1
 
 before_install:
-  - mysql -e 'CREATE DATABASE tlibr_db;' -uroot
+  - mysql -e 'CREATE DATABASE tlibr;' -uroot
 
 before_script:
   - cp .env.travis .env
   - composer self-update
   - composer install
   - php artisan key:generate
+  - php artisan migrate --seed
+  - php artisan storage:link
 
 script:
   - phpunit
@@ -19,4 +21,4 @@ services:
   - mysql
 
 notifications:
-email: false
+  email: false

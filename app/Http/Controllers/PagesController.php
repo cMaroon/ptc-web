@@ -20,11 +20,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Carousel;
+
 class PagesController extends Controller
 {
     public function home()
     {
-        return view('pages.home');
+        return view('pages.home')->with('images', Carousel::orderBy('sort_order', 'asc')->get());
     }
 
     public function news()
