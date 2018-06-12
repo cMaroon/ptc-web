@@ -21,6 +21,7 @@
 namespace App\Http\Controllers;
 
 use App\Carousel;
+use App\Team;
 
 class DashboardController extends Controller
 {
@@ -49,8 +50,8 @@ class DashboardController extends Controller
         return view('dashboard.pages');
     }
 
-    public function users()
+    public function team()
     {
-        return view('dashboard.users');
+        return view('dashboard.team')->with('employees', Team::orderBy('sort_order', 'asc')->get());
     }
 }

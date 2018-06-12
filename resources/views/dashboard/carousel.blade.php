@@ -30,22 +30,34 @@
                 <div class="card-body">
                     <p class="card-text font-italic font-weight-light text-muted">Image size must be exactly 900 x 250 px</p>
                     <hr>
-                    <form action="{{ route('dashboard.carousel.store') }}" class="needs-validation" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <input type="hidden" name="_method" value="POST">
+                    {!! Form::open([
+                        'route'  => 'dashboard.carousel.store',
+                        'class'  => 'needs-validation',
+                        'method' => 'POST',
+                        'files'  => true,
+                    ]) !!}
                         <div class="form-group">
                             <div class="custom-file">
-                                <input type="file" name="carousel_image" class="custom-file-input{{ $errors->has('carousel_image') ? ' is-invalid' : '' }}">
+                                {!! Form::file('carousel_image', [
+                                    'class' => 'custom-file-input'.($errors->has('carousel_image') ? ' is-invalid' : ''),
+                                ]) !!}
+                                {!! Form::label('carousel_image', 'Image Filename&hellip;',[
+                                    'id'    => 'carousel_image_info',
+                                    'class' => 'custom-file-label',
+                                    'style' => 'overflow: hidden !important;',
+                                ]) !!}
                                 @if ($errors->has('carousel_image'))
                                     <div class="invalid-feedback">
                                         {!! $errors->first('carousel_image') !!}
                                     </div>
                                 @endif
-                                <label id="carousel_image_info" class="custom-file-label" for="cover_image" style="overflow: hidden !important;">Browse Carousel Image&hellip;</label>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Upload Image</button>
-                    </form>
+                        {!! Form::hidden('_method', 'POST') !!}
+                        {!! Form::submit('Upload Image', [
+                            'class' => 'btn btn-primary btn-lg',
+                        ]) !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
 
@@ -53,20 +65,32 @@
                 <div class="card rounded-0">
                     <div class="card-body">
                         @if (count($images) > 1) 
-                            <button type="submit" onclick="saveSort();" class="btn btn-primary mb-2">Save Sort Order</button>
+                            {!! Form::button('Save Sort Order', [
+                                'class'   => 'btn btn-primary btn-lg mb-2',
+                                'onclick' => 'saveSort();',
+                            ]) !!}
                         @endif
                         
-                        <div id="ui-sortable" class="">
+                        <div id="ui-sortable">
                             @foreach ($images as $carousel)
                                 <div class="tlibr-carousel-imgs" style="position: relative;">
+                                    {!! Form::button('Remove', [
+                                        'class'   => 'btn btn-danger btn-lg tlibr-shadow',
+                                        'style'   => 'position: absolute; top: 10px; right: 10px;',
+                                        'onclick' => 'event.preventDefault(); $(\'#delete-image-'.$carousel->id.'\').submit();',
+                                    ]) !!}
                                     <img id="{{ $carousel->id }}" class="tlibr-shadow d-block w-100 rounded-0" src="{{ url('/storage/carousel/' . $carousel->image) }}">
-                                    <a href="{{ route('dashboard.carousel.delete', $carousel->id) }}" class="btn btn-danger btn-sm mb-2 tlibr-shadow" style="position: absolute; top: 10px; right: 10px;" onclick="event.preventDefault(); $('#delete-image-' + {{ $carousel->id }}).submit();">Remove</a>
                                 </div>
                                 
-                                <form id="delete-image-{{ $carousel->id }}" action="{{ route('dashboard.carousel.delete', $carousel->id) }}" method="POST" style="visibility: none;" onsubmit="return confirmDelete()">
-                                    @csrf
-                                    <input type="hidden" name="_method" value="DELETE">
-                                </form>
+                                {!! Form::open([
+                                    'route'    => ['dashboard.carousel.delete', $carousel->id],
+                                    'id'       => 'delete-image-'.$carousel->id,
+                                    'method'   => 'POST',
+                                    'onsubmit' => 'return confirmDelete()',
+                                    'style'    => 'visibility: none;',
+                                ]) !!}
+                                    {!! Form::hidden('_method', 'DELETE') !!}
+                                {!! Form::close() !!}
                             @endforeach
                         </div>
                     </div>
@@ -76,11 +100,15 @@
     </div>
 </div>
 
-<form id="update-sort" action="{{ route('dashboard.carousel.update.sortorder') }}" method="POST" style="visibility: none;">
-    @csrf
-    <input type="hidden" name="sort_order" id="sort_order"> 
-    <input type="hidden" name="_method" value="PUT">
-</form>
+{!! Form::open([
+    'route'  => 'dashboard.carousel.update.sortorder',
+    'id'     => 'update-sort',
+    'method' => 'POST',
+    'style'  => 'visibility: none;',
+]) !!}
+    {!! Form::hidden('sort_order', null, ['id' => 'sort_order']) !!}
+    {!! Form::hidden('_method', 'PUT') !!}
+{!! Form::close() !!}
 @endsection
 
 @section('script')
