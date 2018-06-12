@@ -33,8 +33,8 @@
                         <input type="hidden" name="_method" value="POST">
                         <div class="form-row">
                             <div class="col-md-4 mb-3">
-                                <label for="name">Employee Name</label>
-                                <input name="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" id="name" placeholder="Employee Name">
+                                <label for="name">Name</label>
+                                <input name="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" id="name" value="{{ old('name') }}" placeholder="Name">
                                 @if ($errors->has('name'))
                                     <div class="invalid-feedback">
                                         {!! $errors->first('name') !!}
@@ -44,7 +44,7 @@
 
                             <div class="col-md-8 mb-3">
                                 <label for="description">Description</label>
-                                <input name="description" type="text" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" id="description" placeholder="Description">
+                                <input name="description" type="text" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" id="description" value="{{ old('description') }}" placeholder="Description">
                                 @if ($errors->has('description'))
                                     <div class="invalid-feedback">
                                         {!! $errors->first('description') !!}
@@ -76,8 +76,13 @@
                                     <tr id="{{ $employee->id }}">
                                         <td>{{ $employee->name }}</td>
                                         <td style="width: 280px !important;">{{ $employee->description }}</td>
-                                        <td><a href="#">Update</a> <a href="#" class="text-danger">Delete</a></td>
+                                        <td><a href="#">Update</a> <a href="{{ route('dashboard.team.delete', $employee->id) }}" class="text-danger" onclick="event.preventDefault(); $('#delete-employee-' + {{ $employee->id }}).submit();">Delete</a></td>
                                     </tr>
+
+                                    <form id="delete-employee-{{ $employee->id }}" action="{{ route('dashboard.team.delete', $employee->id) }}" method="POST" style="visibility: none;" onsubmit="return confirmDelete()">
+                                        @csrf
+                                        <input type="hidden" name="_method" value="DELETE">
+                                    </form>
                                 @endforeach
                             </tbody>
                         </table>                    
@@ -107,6 +112,16 @@
     });
     $("#sort_order").val(selectedLanguage);
     $('#update-sort').submit();
+}
+
+/**
+ * Confirm Delete
+ * Just call it
+ */
+ function confirmDelete() {
+    if (!confirm('Do you want to delete this employee?')) {
+        event.preventDefault();
+    }
 }
 </script>
 @endsection
