@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
-class CreateCarouselTable extends Migration
+class CreateTeamTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateCarouselTable extends Migration
      */
     public function up()
     {
-        Schema::create('carousel', function (Blueprint $table) {
+        Schema::create('team', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('image');
+            $table->string('name')->unique();
+            $table->string('description');
             $table->integer('sort_order')->nullable();
             $table->nullableTimestamps();
         });
@@ -28,6 +29,6 @@ class CreateCarouselTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('carousel');
+        Schema::dropIfExists('team');
     }
 }

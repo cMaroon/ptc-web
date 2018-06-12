@@ -9,7 +9,9 @@ class CarouselController extends Controller
 {
     public function store(Request $request)
     {
-        $request->validate(['carousel_image' => 'required|mimes:jpeg,jpg,png|dimensions:width=900,height=250']);
+        $request->validate([
+            'carousel_image' => 'required|mimes:jpeg,jpg,png|dimensions:width=900,height=250',
+        ]);
 
         Carousel::create([
             'image'      => Carousel::fileToStore($request->file('carousel_image'), 'carousel'),
@@ -21,9 +23,10 @@ class CarouselController extends Controller
 
     public function update_sortorder(Request $request)
     {
-        $arrID = explode(',', $request->input('sort_order'));
-        for ($i = 0; $i < count($arrID); $i++) {
-            Carousel::where(['id' => $arrID[$i]])->firstOrFail()->update(['sort_order' => $i]);
+        $id = explode(',', $request->input('sort_order'));
+        for ($i = 0; $i < count($id); $i++) {
+            Carousel::where('id', $id[$i])
+                ->update(['sort_order' => $i]);
         }
 
         return redirect(route('dashboard.carousel'));
@@ -31,8 +34,11 @@ class CarouselController extends Controller
 
     public function destroy($id)
     {
-        Carousel::fileToDelete(Carousel::where(['id' => $id])->firstOrFail()->image, 'carousel');
-        Carousel::where(['id' => $id])->firstOrFail()->delete();
+        Carousel::fileToDelete(Carousel::where('id', $id)->firstOrFail()->image, 'carousel');
+
+        Carousel::where('id', $id)
+            ->firstOrFail()
+            ->delete();
 
         return redirect(route('dashboard.carousel'));
     }

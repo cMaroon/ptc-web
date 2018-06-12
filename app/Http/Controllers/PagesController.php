@@ -21,6 +21,7 @@
 namespace App\Http\Controllers;
 
 use App\Carousel;
+use App\Team;
 
 class PagesController extends Controller
 {
@@ -41,7 +42,7 @@ class PagesController extends Controller
 
     public function team()
     {
-        return view('pages.team');
+        return view('pages.team')->with('employees', Team::orderBy('sort_order', 'asc')->get());
     }
 
     public function faq()

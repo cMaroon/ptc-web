@@ -17,24 +17,12 @@ class Carousel extends Model
      * @var array
      */
     protected $fillable = [
-        'image',
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'sort_order',
+        'image', 'sort_order',
     ];
 
     public static function fileToStore($file, $path)
     {
-        $fileNameWithExt = $file->getClientOriginalName();
-        $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-        $fileExt = $file->getClientOriginalExtension();
-        $fileNameToStore = md5($fileName.time()).'.'.$fileExt;
+        $fileNameToStore = md5(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME).time()).'.'.$file->getClientOriginalExtension();
         $file->storeAs('public/'.$path, $fileNameToStore);
 
         return $fileNameToStore;
