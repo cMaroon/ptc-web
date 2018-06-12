@@ -28,13 +28,19 @@
         <div class="col-lg-9">
             <div class="card rounded-0 mb-2">
                 <div class="card-body">
-                    <form action="{{ route('dashboard.team.store') }}" class="needs-validation" method="POST">
-                        @csrf
-                        <input type="hidden" name="_method" value="POST">
+                    {!! Form::open([
+                        'route'  => 'dashboard.team.store',
+                        'class'  => 'needs-validation',
+                        'method' => 'POST',
+                    ]) !!}
                         <div class="form-row">
                             <div class="col-md-4 mb-3">
-                                <label for="name">Name</label>
-                                <input name="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" id="name" value="{{ old('name') }}" placeholder="Name">
+                                {!! Form::label('name', 'Name') !!}
+                                {!! Form::text('name', old('name'), [
+                                    'id'          => 'name',
+                                    'class'       => 'form-control'.($errors->has('name') ? ' is-invalid' : ''),
+                                    'placeholder' => 'Name',
+                                ]) !!}
                                 @if ($errors->has('name'))
                                     <div class="invalid-feedback">
                                         {!! $errors->first('name') !!}
@@ -43,8 +49,12 @@
                             </div>
 
                             <div class="col-md-8 mb-3">
-                                <label for="description">Description</label>
-                                <input name="description" type="text" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" id="description" value="{{ old('description') }}" placeholder="Description">
+                                {!! Form::label('description', 'Description') !!}
+                                {!! Form::text('description', old('description'), [
+                                    'id'          => 'description',
+                                    'class'       => 'form-control'.($errors->has('description') ? ' is-invalid' : ''),
+                                    'placeholder' => 'Description',
+                                ]) !!}
                                 @if ($errors->has('description'))
                                     <div class="invalid-feedback">
                                         {!! $errors->first('description') !!}
@@ -52,8 +62,11 @@
                                 @endif
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Add Employee</button>
-                    </form>
+                        {!! Form::submit('Add Employee', [
+                            'class' => 'btn btn-primary btn-lg',
+                        ]) !!}
+                        {!! Form::hidden('_method', 'POST') !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
 
@@ -61,8 +74,12 @@
                 <div class="card rounded-0">
                     <div class="card-body">
                         @if (count($employees) > 1) 
-                            <button type="submit" onclick="saveSort();" class="btn btn-primary mb-2">Save Sort Order</button>
+                            {!! Form::button('Save Sort Order', [
+                                'class'   => 'btn btn-primary btn-lg mb-2',
+                                'onclick' => 'saveSort();',
+                            ]) !!}
                         @endif
+
                         <table class="table-sm table-team">
                             <thead>
                                 <tr>
@@ -76,13 +93,23 @@
                                     <tr id="{{ $employee->id }}">
                                         <td>{{ $employee->name }}</td>
                                         <td style="width: 280px !important;">{{ $employee->description }}</td>
-                                        <td><a href="#">Update</a> <a href="{{ route('dashboard.team.delete', $employee->id) }}" class="text-danger" onclick="event.preventDefault(); $('#delete-employee-' + {{ $employee->id }}).submit();">Delete</a></td>
+                                        <td>
+                                            {!! Form::button('Delete', [
+                                                'class'   => 'btn btn-danger btn-sm',
+                                                'onclick' => 'event.preventDefault(); $(\'#delete-employee-'.$employee->id.'\').submit();',
+                                            ]) !!}
+                                        </td>
                                     </tr>
-
-                                    <form id="delete-employee-{{ $employee->id }}" action="{{ route('dashboard.team.delete', $employee->id) }}" method="POST" style="visibility: none;" onsubmit="return confirmDelete()">
-                                        @csrf
-                                        <input type="hidden" name="_method" value="DELETE">
-                                    </form>
+                                    
+                                    {!! Form::open([
+                                        'route'    => ['dashboard.team.delete', $employee->id],
+                                        'id'       => 'delete-employee-'.$employee->id,
+                                        'method'   => 'POST',
+                                        'onsubmit' => 'return confirmDelete()',
+                                        'style'    => 'visibility: none;',
+                                    ]) !!}
+                                        {!! Form::hidden('_method', 'DELETE') !!}
+                                    {!! Form::close() !!}
                                 @endforeach
                             </tbody>
                         </table>                    
@@ -93,11 +120,15 @@
     </div>
 </div>
 
-<form id="update-sort" action="{{ route('dashboard.team.update.sortorder') }}" method="POST" style="visibility: none;">
-    @csrf
-    <input type="hidden" name="sort_order" id="sort_order"> 
-    <input type="hidden" name="_method" value="PUT">
-</form>
+{!! Form::open([
+    'route'  => 'dashboard.team.update.sortorder',
+    'id'     => 'update-sort',
+    'method' => 'POST',
+    'style'  => 'visibility: none;',
+]) !!}
+    {!! Form::hidden('sort_order', null, ['id' => 'sort_order']) !!}
+    {!! Form::hidden('_method', 'PUT') !!}
+{!! Form::close() !!}
 @endsection
 
 @section('script')
