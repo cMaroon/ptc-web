@@ -18,7 +18,7 @@ Route::get('/career', 'PagesController@career')->name('career');
 |--------------------------------------------------------------------------
 */
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-Route::name('dashboard.')->group(function() {
+Route::name('dashboard.')->group(function () {
 
     /*
     |--------------------------------------------------------------------------
@@ -36,7 +36,7 @@ Route::name('dashboard.')->group(function() {
     | Carousel Routes
     |--------------------------------------------------------------------------
     */
-    Route::name('carousel.')->group(function() {
+    Route::name('carousel.')->group(function () {
         Route::post('/dashboard/carousel', 'CarouselController@store')->name('store');
         Route::put('/dashboard/carousel', 'CarouselController@update_sortorder')->name('update.sortorder');
         Route::delete('/dashboard/carousel/{carousel}', 'CarouselController@destroy')->name('delete');
@@ -47,7 +47,7 @@ Route::name('dashboard.')->group(function() {
     | Team Routes
     |--------------------------------------------------------------------------
     */
-    Route::name('team.')->group(function() {
+    Route::name('team.')->group(function () {
         Route::post('/dashboard/team', 'TeamController@store')->name('store');
         Route::put('/dashboard/team', 'TeamController@update_sortorder')->name('update.sortorder');
         Route::delete('/dashboard/team/{team}', 'TeamController@destroy')->name('delete');
