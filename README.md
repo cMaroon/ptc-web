@@ -3,8 +3,6 @@ The Lost Island : Battle Royale Official Website
 
 [![Build Status](https://travis-ci.org/Twiistrz/tlibr-web.svg?branch=master)](https://travis-ci.org/Twiistrz/tlibr-web) [![StyleCI](https://github.styleci.io/repos/136427458/shield)](https://github.styleci.io/repos/136427458) [![TLIBR](https://discordapp.com/api/guilds/442354079193104394/widget.png?style=shield)](https://discord.gg/ZBxkcU6)
 
-The Lost Island : Battle Royale Official Website
-
 Requirements
 ------------
 - A PHP 7.1+ environment
