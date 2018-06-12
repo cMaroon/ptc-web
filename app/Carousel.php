@@ -17,7 +17,16 @@ class Carousel extends Model
      * @var array
      */
     protected $fillable = [
-        'image', 'sort_order',
+        'image',
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'sort_order',
     ];
 
     public static function fileToStore($file, $path)

@@ -23,7 +23,7 @@ class CarouselController extends Controller
     {
         $arrID = explode(',', $request->input('sort_order'));
         for ($i = 0; $i < count($arrID); $i++) {
-            Carousel::where(['id' => $arrID[$i]])->update(['sort_order' => $i]);
+            Carousel::where(['id' => $arrID[$i]])->firstOrFail()->update(['sort_order' => $i]);
         }
 
         return redirect(route('dashboard.carousel'));
@@ -32,7 +32,7 @@ class CarouselController extends Controller
     public function destroy($id)
     {
         Carousel::fileToDelete(Carousel::where(['id' => $id])->firstOrFail()->image, 'carousel');
-        Carousel::where(['id' => $id])->delete();
+        Carousel::where(['id' => $id])->firstOrFail()->delete();
 
         return redirect(route('dashboard.carousel'));
     }
