@@ -20,7 +20,6 @@
 
 namespace App\Http\Controllers;
 
-use App\MarkdownProcessor;
 use App\Carousel;
 use App\Team;
 
@@ -32,7 +31,7 @@ class DashboardController extends Controller
     }
 
     public function carousel()
-    {        
+    {
         return view('dashboard.carousel')->with('images', Carousel::orderBy('sort_order', 'asc')->get());
     }
 
