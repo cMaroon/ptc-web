@@ -1,7 +1,7 @@
 The Lost Island : Battle Royale Official Website
 =======
 
-[![Build Status](https://travis-ci.org/Twiistrz/tlibr-web.svg?branch=master)](https://travis-ci.org/Twiistrz/tlibr-web) [![StyleCI](https://github.styleci.io/repos/136427458/shield)](https://github.styleci.io/repos/136427458) [![TLIBR](https://discordapp.com/api/guilds/442354079193104394/widget.png?style=shield)](https://discord.gg/ZBxkcU6)
+[![Build Status](https://travis-ci.org/TLIBR/tlibr-web.svg?branch=master)](https://travis-ci.org/TLIBR/tlibr-web) [![StyleCI](https://github.styleci.io/repos/136427458/shield)](https://github.styleci.io/repos/136427458) [![TLIBR](https://discordapp.com/api/guilds/442354079193104394/widget.png?style=shield)](https://discord.gg/ZBxkcU6)
 
 Requirements
 ------------
