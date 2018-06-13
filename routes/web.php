@@ -23,7 +23,8 @@
 | Pages Routes
 |--------------------------------------------------------------------------
 */
-Route::get('/', 'PagesController@home')->name('home');
+Route::get('/', 'PagesController@landing')->name('landing');
+Route::get('/home', 'PagesController@home')->name('home');
 Route::get('/news', 'PagesController@news')->name('news');
 Route::get('/frequently-asked-question', 'PagesController@faq')->name('faq');
 Route::get('/privacy-policy', 'PagesController@privacy')->name('privacy');

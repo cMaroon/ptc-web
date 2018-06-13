@@ -10779,6 +10779,44 @@ a.list-group-item-danger.active:focus {
   color: #000;
 }
 
+#landing {
+  color: #fff;
+  background-image: url(/images/welcome.jpg?4e88bfc7172c6a546490736eff8c4348);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+#landing h1 {
+  font-family: "Open Sans" !important;
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 0;
+  text-shadow: 0 0 15px black;
+}
+
+#landing p {
+  font-family: "Open Sans" !important;
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
 ::-moz-selection {
   color: #fff;
   background-color: #2ecc71;

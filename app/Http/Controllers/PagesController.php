@@ -25,6 +25,10 @@ use App\Team;
 
 class PagesController extends Controller
 {
+    public function landing()
+    {
+        return view('pages.landing');
+    }
     public function home()
     {
         return view('pages.home')->with('images', Carousel::orderBy('sort_order', 'asc')->get());
