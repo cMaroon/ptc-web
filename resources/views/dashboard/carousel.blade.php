@@ -81,7 +81,7 @@
                                     ]) !!}
                                     <img id="{{ $carousel->id }}" class="tlibr-shadow d-block w-100 rounded-0" src="{{ url('/storage/carousel/' . $carousel->image) }}">
                                 </div>
-                                
+
                                 {!! Form::open([
                                     'route'  => ['dashboard.carousel.delete', $carousel->id],
                                     'id'     => 'delete-image-'.$carousel->id,

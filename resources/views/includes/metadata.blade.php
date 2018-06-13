@@ -33,5 +33,6 @@
 <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
 
 {{-- Scripts --}}
+<script src="//cdn.jsdelivr.net/discord-widget/latest/discord-widget.min.js"></script>
 <script src="{{ asset('assets/js/app.js') }}"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
