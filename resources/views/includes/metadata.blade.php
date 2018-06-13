@@ -34,3 +34,4 @@
 
 {{-- Scripts --}}
 <script src="{{ asset('assets/js/app.js') }}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

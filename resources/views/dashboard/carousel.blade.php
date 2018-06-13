@@ -66,8 +66,8 @@
                     <div class="card-body">
                         @if (count($images) > 1) 
                             {!! Form::button('Save Sort Order', [
+                                'id'      => 'save-sort',
                                 'class'   => 'btn btn-primary btn-lg mb-2',
-                                'onclick' => 'saveSort();',
                             ]) !!}
                         @endif
                         
@@ -77,17 +77,16 @@
                                     {!! Form::button('Remove', [
                                         'class'   => 'btn btn-danger btn-lg tlibr-shadow',
                                         'style'   => 'position: absolute; top: 10px; right: 10px;',
-                                        'onclick' => 'event.preventDefault(); $(\'#delete-image-'.$carousel->id.'\').submit();',
+                                        'onclick' => 'return confirmDelete(\'image\', '.$carousel->id.');',
                                     ]) !!}
                                     <img id="{{ $carousel->id }}" class="tlibr-shadow d-block w-100 rounded-0" src="{{ url('/storage/carousel/' . $carousel->image) }}">
                                 </div>
                                 
                                 {!! Form::open([
-                                    'route'    => ['dashboard.carousel.delete', $carousel->id],
-                                    'id'       => 'delete-image-'.$carousel->id,
-                                    'method'   => 'POST',
-                                    'onsubmit' => 'return confirmDelete()',
-                                    'style'    => 'visibility: none;',
+                                    'route'  => ['dashboard.carousel.delete', $carousel->id],
+                                    'id'     => 'delete-image-'.$carousel->id,
+                                    'method' => 'POST',
+                                    'style'  => 'visibility: none;',
                                 ]) !!}
                                     {!! Form::hidden('_method', 'DELETE') !!}
                                 {!! Form::close() !!}
@@ -106,7 +105,7 @@
     'method' => 'POST',
     'style'  => 'visibility: none;',
 ]) !!}
-    {!! Form::hidden('sort_order', null, ['id' => 'sort_order']) !!}
+    {!! Form::hidden('sort_order', null, ['id' => 'sort-order']) !!}
     {!! Form::hidden('_method', 'PUT') !!}
 {!! Form::close() !!}
 @endsection
@@ -114,7 +113,17 @@
 @section('script')
 <script type="text/javascript">
 $(document).ready(function() {
-    $("#ui-sortable img").css("max-width", $("#ui-sortable img").width() + "px");
+    $('#ui-sortable img').css('max-width', $('#ui-sortable img').width() + 'px');
+
+    $('#save-sort').click(function() {
+        var arrID = new Array();
+        $('#ui-sortable img').each(function() {
+            arrID.push($(this).attr('id'));
+        });
+
+        $('#sort-order').val(arrID);
+        $('#update-sort').submit();
+    }); 
 });
 
 /**
@@ -126,25 +135,25 @@ $('[name="carousel_image"]').change(function() {
 });
 
 /**
- * For Sort Order
+ * Confirm Delete Function
+ * @param id
  */
-function saveSort() {
-    var selectedLanguage = new Array();
-    $('#ui-sortable img').each(function() {
-        selectedLanguage.push($(this).attr("id"));
+ function confirmDelete(type, id) {
+    swal({
+        title: "Are you sure?",
+        text: "You will not be able to recover this!",
+        type: "warning",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true
+    })
+    .then((willDelete) => {
+        if (willDelete) {
+            $('#delete-' + type + '-' + id).submit();
+        } else {
+            event.preventDefault();
+        }
     });
-    $("#sort_order").val(selectedLanguage);
-    $('#update-sort').submit();
-}
-
-/**
- * Confirm Delete
- * Just call it
- */
-function confirmDelete() {
-    if (!confirm('Do you want to delete this item?')) {
-        event.preventDefault();
-    }
 }
 </script>
 @endsection
