@@ -5,7 +5,6 @@ There are a few different options to get started:
 ### Install prerequisites
 - MySQL 5.7
 - PHP 7.1+ (with curl, gd, intl, json, mbstring, mcrypt, mysql, xml and zip extensions)
-- xampp (or other webserver)
 - a modern version of nodejs (and npm)
 - redis (not required, but you may want to use for caching and laravel's job-queue)
 
@@ -43,4 +42,11 @@ $ php artisan key:generate
 $ npm run dev
 # Generating assets while developing
 $ npm run watch
+```
+
+### Local Development Server
+If you have PHP installed locally and you would like to use PHP's built-in development server to serve your application, you may use the serve Artisan command. This command will start a development server at `http://localhost:8000`:
+
+```
+$ php artisan serve
 ```
