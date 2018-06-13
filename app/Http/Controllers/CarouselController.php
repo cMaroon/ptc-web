@@ -26,7 +26,7 @@ use Illuminate\Http\Request;
 class CarouselController extends Controller
 {
     public function store(Request $request)
-    {   
+    {
         $request->validate([
             'carousel_image' => 'required|mimes:jpeg,jpg,png|dimensions:width=900,height=250',
         ]);
