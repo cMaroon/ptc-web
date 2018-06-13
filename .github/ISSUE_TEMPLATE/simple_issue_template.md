@@ -1,6 +1,6 @@
 ---
 name: Simple issue template
-about: Describe this issue template's purpose here.
+about: Regarding general issues
 
 ---
 
