@@ -96,17 +96,16 @@
                                         <td>
                                             {!! Form::button('Delete', [
                                                 'class'   => 'btn btn-danger btn-sm',
-                                                'onclick' => 'event.preventDefault(); $(\'#delete-employee-'.$employee->id.'\').submit();',
+                                                'onclick' => 'confirmDelete(\'employee\', '.$employee->id.');',
                                             ]) !!}
                                         </td>
                                     </tr>
-                                    
+
                                     {!! Form::open([
-                                        'route'    => ['dashboard.team.delete', $employee->id],
-                                        'id'       => 'delete-employee-'.$employee->id,
-                                        'method'   => 'POST',
-                                        'onsubmit' => 'return confirmDelete()',
-                                        'style'    => 'visibility: none;',
+                                        'route'  => ['dashboard.team.delete', $employee->id],
+                                        'id'     => 'delete-employee-'.$employee->id,
+                                        'method' => 'POST',
+                                        'style'  => 'visibility: none;',
                                     ]) !!}
                                         {!! Form::hidden('_method', 'DELETE') !!}
                                     {!! Form::close() !!}
@@ -146,13 +145,25 @@
 }
 
 /**
- * Confirm Delete
- * Just call it
+ * Confirm Delete Function
+ * @param id
  */
- function confirmDelete() {
-    if (!confirm('Do you want to delete this employee?')) {
-        event.preventDefault();
-    }
+ function confirmDelete(type, id) {
+    swal({
+        title: "Are you sure?",
+        text: "You will not be able to recover this!",
+        type: "warning",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true
+    })
+    .then((willDelete) => {
+        if (willDelete) {
+            $('#delete-' + type + '-' + id).submit();
+        } else {
+            event.preventDefault();
+        }
+    });
 }
 </script>
 @endsection

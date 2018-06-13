@@ -79,15 +79,35 @@
 <div class="mb-4">
     <div class="card card-header-section rounded-0 mb-2">
         <div class="card-body">
-            <h4 class="card-title mb-0 font-italic">Partners</h4>
+            <h4 class="card-title mb-0 font-italic">TLIBR Discord Server</h4>
         </div>
     </div>
 
-    <div class="card rounded-0 mb-2">
-        <div class="card-body">
-            {{-- partner lists --}}
-        </div>
-    </div>
+    <style>
+        .discord-userlist {
+            max-height: 280px;
+            overflow-y: auto;
+        }
+        .discord-widget {
+            box-shadow: none;
+        }
+    </style>
+    <div class="discord-widget tlibr-shadow"></div>
+    <script>
+        $('document').ready(function() {            
+            discordWidget.init({
+                serverId: '442354079193104394',
+                title: false,
+                join: true,
+                alphabetical: true,
+                theme: 'light',
+                hideChannels: true,
+                showAllUsers: true,
+                allUsersDefaultState: false
+            });
+            discordWidget.render();
+        });
+    </script>
 </div>
 
 <div class="mb-4 text-center">

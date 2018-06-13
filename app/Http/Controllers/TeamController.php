@@ -32,10 +32,16 @@ class TeamController extends Controller
             'description' => 'required',
         ]);
 
+        if (Team::count() === 0) {
+            $sort_order = Team::count();
+        } else {
+            $sort_order = Team::orderBy('sort_order', 'desc')->firstOrFail()->sort_order + 1;
+        }
+
         Team::create([
             'name'        => $request->input('name'),
             'description' => $request->input('description'),
-            'sort_order'  => Team::count(),
+            'sort_order'  => $sort_order,
         ]);
 
         return redirect(route('dashboard.team'));
@@ -43,9 +49,8 @@ class TeamController extends Controller
 
     public function update_sortorder(Request $request)
     {
-        $id = explode(',', $request->input('sort_order'));
-        for ($i = 0; $i < count($id); $i++) {
-            Team::where('id', $id[$i])
+        for ($i = 0; $i < count(explode(',', $request->input('sort_order'))); $i++) {
+            Team::where('id', explode(',', $request->input('sort_order'))[$i])
                 ->update(['sort_order' => $i]);
         }
 

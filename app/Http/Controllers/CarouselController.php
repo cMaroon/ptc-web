@@ -31,9 +31,15 @@ class CarouselController extends Controller
             'carousel_image' => 'required|mimes:jpeg,jpg,png|dimensions:width=900,height=250',
         ]);
 
+        if (Carousel::count() === 0) {
+            $sort_order = Carousel::count();
+        } else {
+            $sort_order = Carousel::orderBy('sort_order', 'desc')->firstOrFail()->sort_order + 1;
+        }
+
         Carousel::create([
             'image'      => Carousel::fileToStore($request->file('carousel_image'), 'carousel'),
-            'sort_order' => Carousel::count(),
+            'sort_order' => $sort_order,
         ]);
 
         return redirect(route('dashboard.carousel'));
@@ -41,9 +47,8 @@ class CarouselController extends Controller
 
     public function update_sortorder(Request $request)
     {
-        $id = explode(',', $request->input('sort_order'));
-        for ($i = 0; $i < count($id); $i++) {
-            Carousel::where('id', $id[$i])
+        for ($i = 0; $i < count(explode(',', $request->input('sort_order'))); $i++) {
+            Carousel::where('id', explode(',', $request->input('sort_order'))[$i])
                 ->update(['sort_order' => $i]);
         }
 
